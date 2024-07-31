@@ -7,23 +7,22 @@ package com.potter.sort;
  * Desc:
  */
 public class BubbleSort {
-    public static void sort(int[] nums){
-        int length = nums.length;
-        for (int i = 0; i < length; i++) {
-            for (int j = i+1; j < length; j++) {
-                if(nums[i] > nums[j]){
-                    int tmp = nums[i];
-                    nums[i] = nums[j];
-                    nums[j] = tmp;
+    public static void sort(int arr[]){
+        for(int i=0;i < arr.length - 1;i++){
+            for (int j = 0; j < arr.length - 1; j++) {
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                 }
             }
         }
     }
 
     public static void main(String[] args) {
-        int nums[] = {5,8,3,7,4,0};
-        BubbleSort.sort(nums);
-        for (int num : nums) {
+        int arr[] = {5,8,3,7,4,0};
+        BubbleSort.sort(arr);
+        for (int num : arr) {
             System.out.print(num+" ");
         }
     }
